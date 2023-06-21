@@ -92,14 +92,14 @@ class Place(BaseModel, Base):
 
         @amenities.setter
         def amenities(self, value):
-            """Adds an amenity to this Place"""
+            """ Adds an amenity to this Place"""
             if type(value) is Amenity:
                 if value.id not in self.amenity_ids:
                     self.amenity_ids.append(value.id)
 
         @property
         def reviews(self):
-            """Returns the reviews of this Place"""
+            """ Returns the reviews of this Place"""
             from models import storage
             reviews_of_place = []
             for value in storage.all(Review).values():
