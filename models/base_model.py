@@ -43,7 +43,7 @@ class BaseModel:
         return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
     def delete(self):
-        """Deletes this BaseModel instance from the storage."""
+        """ Deletes this BaseModel instance from the storage."""
         from models import storage
         storage.delete(self)
 
